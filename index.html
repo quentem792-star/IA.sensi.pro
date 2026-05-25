@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REAL SENSI ULTRA GOLD CYBER V29 MASTER</title>
+    
+    <!-- Recursos Externos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuração Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        escuro: '#0F0F13',
+                        preto: '#000000',
+                        laranja: '#FF9500',
+                        vermelho: '#FF2200',
+                        dourado: '#FFCC00',
+                        painel: '#121218',
+                        borda: '#FFAA00',
+                        texto_vermelho: '#FF3322',
+                        gold: '#ffd700',
+                        neon: '#8b0000',
+                        red: '#ff3b3b',
+                    },
+                    fontFamily: {
+                        tech: ['Orbitron', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-laranja': '0 0 18px #FF9500, inset 0 0 12px #FF950030',
+                        'glow-vermelho': '0 0 18px #FF2200, inset 0 0 12px #FF220030',
+                        'glow-dourado': '0 0 15px #FFCC00, inset 0 0 8px #FFCC0020',
+                        'glow-neon': '0 0 20px #8b0000, 0 0 40px #ff3b3b',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Estilos Personalizados -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .clip-custom {
+                clip-path: polygon(
+                    0% 10%, 10% 0%, 
+                    90% 0%, 100% 10%, 
+                    100% 90%, 90% 100%, 
+                    10% 100%, 0% 90%
+                );
+            }
+            .clip-input {
+                clip-path: polygon(
+                    0% 20%, 2% 0%, 
+                    98% 0%, 100% 20%, 
+                    100% 80%, 98% 100%, 
+                    2% 100%, 0% 80%
+                );
+            }
+            .text-glow {
+                text-shadow: 0 0 8px currentColor;
+            }
+            .bg-gradient-cyber {
+                background: linear-gradient(135deg, #000000 0%, #2b0000 50%, #000000 100%);
+            }
+            .gradiente-ouro {
+                background: linear-gradient(45deg, #ffd700, #ff9800, #ff3b3b, #8b0000, #ffd700);
+                background-size: 400% 400%;
+                animation: brilho 2s linear infinite;
+            }
+        }
+        @keyframes girar{
+            0%{transform:rotate(0deg) scale(1);}
+            50%{transform:rotate(180deg) scale(1.2);}
+            100%{transform:rotate(360deg) scale(1);}
+        }
+        @keyframes brilho{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
+        @keyframes pulse{
+            100%{transform:scale(1.05);}
+        }
+        @keyframes flutuar{
+            0%{transform:translateY(0);}
+            100%{transform:translateY(-8px);}
+        }
+        @keyframes tremer{
+            100%{transform:translateX(2px);}
+        }
+        @keyframes pulsarOlho {
+            0% { transform: scale(1); box-shadow: inset 0 0 20px #000, 0 0 30px rgba(255, 59, 59, 0.6), 0 0 60px rgba(255, 215, 0, 0.3); }
+            100% { transform: scale(1.08); box-shadow: inset 0 0 25px #000, 0 0 40px rgba(255, 59, 59, 0.8), 0 0 80px rgba(255, 215, 0, 0.5); }
+        }
+        @keyframes brilhoIris {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.4); }
+        }
+        @keyframes piscarTexto{
+            100%{opacity:0.7;}
+        }
+        @keyframes moverGrad{
+            0%{background-position:0% 50%;}
+            100%{background-position:100% 50%;}
+        }
+        @keyframes gradienteAnimado{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
+    </style>
+</head>
+<body class="bg-preto min-h-screen flex items-center justify-center font-tech overflow-hidden">
+    <!-- TELA DE LOGIN -->
+    <div id="telaLogin" class="fixed inset-0 z-50 bg-gradient-cyber flex items-center justify-center p-4">
+        <div class="luz-fundo absolute w-[600px] h-[600px] bg-radial-gradient from-gold/15 to-transparent rounded-full animate-[girar_8s_linear_infinite] z-0"></div>
+        <div class="w-full max-w-md clip-custom gradiente-ouro p-1 relative z-10">
+            <div class="bg-painel/95 w-full h-full p-8 text-center clip-custom">
+                <div class="logo-principal text-[clamp(2rem,8vw,4rem)] font-black bg-gradient-to-b from-white via-gold to-neon bg-clip-text text-transparent filter drop-shadow-[0_0_10px_#ffd700] animate-[pulse_1.8s_infinite_alternate]">REAL SENSI</div>
+                <div class="sub-logo text-lg font-bold tracking-[0.3em] text-red text-glow mt-2 mb-6">ULTRA GOLD V29</div>
+                
+                <div class="aviso-sistema bg-gold/10 border border-gold p-3 rounded-lg text-gold font-bold text-sm mb-6 shadow-glow-dourado/30">🔒 ACESSO RESTRITO AO SISTEMA</div>
+                
+                <i class="fa-solid fa-lock text-red text-5xl mb-4 text-glow animate-[flutuar_2s_infinite_alternate_ease-in-out]"></i>
+                
+                <input type="password" id="inputSenha" placeholder="DIGITE A SENHA" class="w-full h-16 bg-escuro/80 border-2 border-red/30 rounded-xl px-4 text-white text-center text-xl font-bold outline-none focus:border-gold focus:shadow-glow-dourado transition-all mb-4">
+                
+                <button id="btnEntrar" onclick="abrirPainel()" class="w-full h-16 gradiente-ouro rounded-xl text-white font-black text-xl tracking-wider hover:scale-[1.04] hover:shadow-glow-neon transition-all">⚡ ENTRAR</button>
+                
+                <p id="erroSenha" class="text-red text-sm mt-3 hidden animate-[tremer_0.2s_infinite_alternate] bg-neon/10 p-2 rounded-lg border border-red">❌ SENHA INCORRETA! TENTE NOVAMENTE</p>
+                
+                <p class="text-white/50 text-xs mt-4 tracking-widest">VERSÃO MASTER • 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FUNDO TECNOLOGICO -->
+    <div class="fixed inset-0 bg-gradient-to-br from-[#1a0f0f] to-preto/95"></div>
+    <div class="fixed inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');"></div>
+
+    <!-- PAINEL PRINCIPAL -->
+    <div class="relative z-10 w-[94%] max-w-md clip-custom bg-painel/90 border-2 border-borda/60 shadow-glow-dourado p-7">
+        
+        <!-- TITULO PRINCIPAL -->
+        <div class="text-center mb-8 space-y-2">
+            <div class="flex items-center justify-center gap-3">
+                <i class="fa-solid fa-table-cells text-laranja text-2xl text-glow"></i>
+                <h1 class="text-[clamp(1.5rem,5vw,2rem)] font-black text-transparent bg-clip-text bg-gradient-to-r from-dourado to-laranja tracking-wider text-glow">IA CALCULADÓRA</h1>
+            </div>
+            <h2 class="text-[clamp(1.2rem,4vw,1.5rem)] font-bold text-dourado/90 tracking-[0.2em]">ANTI-PINAR 1000%</h2>
+        </div>
+
+        <!-- CAMPOS DE ENTRADA -->
+        <div class="space-y-5 mb-7">
+            <!-- MARCA DO CELULAR -->
+            <div>
+                <label class="block text-white/90 text-sm font-semibold pl-2 mb-1 tracking-wider">MARCA DO CELULAR</label>
+                <div class="clip-input bg-escuro/80 border-2 border-laranja/40 shadow-glow-laranja/10">
+                    <input type="text" id="marca" placeholder="Ex: Xiaomi, Samsung, iPhone..." class="w-full h-12 bg-transparent px-4 text-white text-base outline-none">
+                </div>
+            </div>
+
+            <!-- MODELO -->
+            <div>
+                <label class="block text-texto_vermelho text-sm font-semibold pl-2 mb-1 tracking-wider text-glow">MODELO</label>
+                <div class="clip-input bg-escuro/80 border-2 border-texto_vermelho/60 shadow-glow-vermelho/20">
+                    <input type="text" id="modelo" placeholder="Ex: A03, S24, Redmi Note..." class="w-full h-12 bg-transparent px-4 text-white font-bold text-base outline-none">
+                </div>
+            </div>
+
+            <!-- INFLUENCIADOR -->
+            <div>
+                <label class="block text-dourado text-sm font-semibold pl-2 mb-1 tracking-wider text-glow">INFLUENCIADOR</label>
+                <div class="clip-input bg-escuro/80 border-2 border-dourado/50 shadow-glow-dourado/20">
+                    <input type="text" id="famoso" placeholder="Ex: Nobru, Two9, Cerol..." class="w-full h-12 bg-transparent px-4 text-white text-base outline-none">
+                </div>
+            </div>
+        </div>
+
+        <!-- LINHA: TIPO + MODO -->
+        <div class="grid grid-cols-2 gap-4 mb-5">
+            <div>
+                <label class="block text-white/90 text-sm font-semibold pl-2 mb-1 tracking-wider">TIPO</label>
+                <div class="relative clip-input bg-escuro/80 border-2 border-laranja/40 shadow-glow-laranja/10">
+                    <select id="tipo" class="w-full h-12 bg-transparent px-4 text-white text-base outline-none appearance-none">
+                        <option>BAIXA</option>
+                        <option selected>MEDIA</option>
+                        <option>ALTA</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-laranja"></i>
+                </div>
+            </div>
+            <div>
+                <label class="block text-white/90 text-sm font-semibold pl-2 mb-1 tracking-wider">MODO</label>
+                <div class="relative clip-input bg-escuro/80 border-2 border-laranja/40 shadow-glow-laranja/10">
+                    <select id="modo" class="w-full h-12 bg-transparent px-4 text-white text-base outline-none appearance-none">
+                        <option selected>NORMAL</option>
+                        <option>LENDA</option>
+                        <option>PROIBIDA</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-laranja"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- LINHA: CALIBRAGEM + USAR DPI -->
+        <div class="grid grid-cols-2 gap-4 mb-7">
+            <div>
+                <label class="block text-white/90 text-sm font-semibold pl-2 mb-1 tracking-wider">CALIBRAGEM</label>
+                <div class="relative clip-input bg-escuro/80 border-2 border-laranja/40 shadow-glow-laranja/10">
+                    <select id="calibragem" class="w-full h-12 bg-transparent px-4 text-white text-base outline-none appearance-none">
+                        <option>CALIBRADA</option>
+                        <option selected>PRO</option>
+                        <option>FREESTYLE</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-laranja"></i>
+                </div>
+            </div>
+            <div>
+                <label class="block text-white/90 text-sm font-semibold pl-2 mb-1 tracking-wider">USAR DPI</label>
+                <div class="relative clip-input bg-escuro/80 border-2 border-laranja/40 shadow-glow-laranja/10">
+                    <select id="usarDpi" onchange="toggleDpi()" class="w-full h-12 bg-transparent px-4 text-white text-base outline-none appearance-none">
+                        <option>OFF</option>
+                        <option selected>ON</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-laranja"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- CAMPO DPI COM VALIDAÇÃO -->
+        <div id="dpiField" class="mb-7">
+            <label class="block text-white/90 text-sm font-semibold pl-2 mb-1 tracking-wider">VALOR DPI (100 A 2000)</label>
+            <div class="clip-input bg-escuro/80 border-2 border-vermelho/60 shadow-glow-vermelho/20">
+                <input type="number" id="dpi" min="100" max="2000" placeholder="Digite entre 100 e 2000" class="w-full h-12 bg-transparent px-4 text-white text-center text-lg outline-none">
+            </div>
+            <p id="avisoDpi" class="text-red text-xs mt-1 hidden">⚠️ O DPI deve ser entre 100 e 2000!</p>
+        </div>
+
+        <!-- BOTÃO GERAR SENSI -->
+        <button id="botaoGerar" onclick="processar()" class="w-full h-14 clip-input bg-escuro border-2 border-vermelho/80 shadow-glow-vermelho relative overflow-hidden group">
+            <span class="absolute inset-0 bg-gradient-to-r from-vermelho/30 via-transparent to-vermelho/30 group-hover:from-vermelho/50 group-hover:to-vermelho/50 transition-all duration-500"></span>
+            <span class="relative z-10 flex items-center justify-center gap-3 text-white font-black text-lg tracking-[0.15em] text-glow">
+                <i class="fa-solid fa-arrows-rotate text-dourado text-xl"></i>
+                GERAR SENSI 1000%
+            </span>
+        </button>
+    </div>
+
+    <!-- LOADER DE ANÁLISE -->
+    <div id="loader" class="relative z-10 w-[94%] max-w-md mt-6 clip-custom bg-painel/90 border-2 border-borda/60 shadow-glow-dourado p-6 hidden">
+        <div class="text-center">
+            <div class="olho-capa w-[130px] h-[130px] mx-auto relative rounded-full bg-white/90 shadow-[inset_0_0_20px_#000,0_0_30px_rgba(255,59,59,0.6),0_0_60px_rgba(255,215,0,0.3)] animate-[pulsarOlho_2s_infinite_alternate_ease-in-out]">
+                <div class="iris absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65px] h-[65px] rounded-full bg-gradient-45 from-neon via-red to-laranja shadow-[0_0_15px_#000,inset_0_0_10px_rgba(0,0,0,0.5)] animate-[brilhoIris_1.5s_infinite_alternate]"></div>
+                <div class="pupila absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30px] h-[30px] rounded-full bg-preto shadow-[0_0_8px_#000]"></div>
+                <div class="brilho absolute top-[30%] left-[35%] w-[18px] h-[18px] rounded-full bg-white opacity-90 blur-[1px]"></div>
+            </div>
+            <h2 id="armaNome" class="text-xl font-black text-dourado mt-4 mb-2 text-glow animate-[piscarTexto_0.8s_infinite_alternate]">ANALISANDO RECUO...</h2>
+            <div class="scan-box w-full h-[35px] mt-2 bg-escuro rounded-full overflow-hidden border-2 border-red/60 shadow-[inset_0_0_15px_#000,0_0_20px_rgba(255,59,59,0.3)]">
+                <div id="scanFill" class="scan-fill h-full w-0 bg-gradient-to-r from-gold via-laranja to-red bg-[length:200%_200%] animate-[moverGrad_0.5s_linear_infinite] shadow-[0_0_30px_#ff3b3b] transition-all duration-150 ease-out"></div>
+            </div>
+            <h2 id="scanPercent" class="text-2xl font-black text-white mt-2 text-glow">0%</h2>
+        </div>
+    </div>
+
+    <!-- RESULTADO COM SENSI PERFEITA -->
+    <div id="resultado" class="relative z-10 w-[94%] max-w-md mt-6 clip-custom bg-painel/90 border-2 border-borda/60 shadow-glow-dourado p-6 hidden opacity-0 transition-opacity duration-300">
+        <div id="cards" class="sensi-box"></div>
+    </div>
+
+    <!-- SISTEMA DE CÁLCULOS E FUNÇÕES -->
+    <script>
+        const SENHA_CORRETA = "GERAR00";
+        const scans = [
+            "ESTABILIZANDO MIRA...",
+            "REDUZINDO TREMIDO...",
+            "AJUSTANDO FOCO...",
+            "CALIBRANDO CAPA 1000%...",
+            "BLOQUEANDO RECUO...",
+            "SINCRONIZANDO DPI...",
+            "OTIMIZANDO PARA NÃO PINAR...",
+            "FINALIZANDO IA..."
+        ];
+
+        // LOGIN SISTEMA
+        function abrirPainel(){
+            const senha = document.getElementById("inputSenha").value;
+            if(senha !== SENHA_CORRETA){ 
+                document.getElementById("erroSenha").classList.remove('hidden'); 
+                navigator.vibrate?.(300); 
+                return; 
+            }
+            document.getElementById("telaLogin").style.display = "none";
+            document.getElementById("erroSenha").classList.add('hidden');
+        }
+
+        // CONTROLE DPI
+        function toggleDpi(){
+            const usar = document.getElementById("usarDpi").value;
+            const campoDpi = document.getElementById("dpiField");
+            const aviso = document.getElementById("avisoDpi");
+            campoDpi.style.display = usar === "ON" ? "block" : "none";
+            aviso.classList.add('hidden');
+        }
+
+        // ✅ VALIDAÇÃO DO DPI ANTES DE TUDO
+        function validarDpi() {
+            const usarDpi = document.getElementById("usarDpi").value;
+            const aviso = document.getElementById("avisoDpi");
+            if (usarDpi === "OFF") return true;
+
+            const dpi = Number(document.getElementById("dpi").value);
+            if (isNaN(dpi) || dpi < 100 || dpi > 2000) {
+                aviso.classList.remove('hidden');
+                navigator.vibrate?.(200);
+                return false;
+            }
+            aviso.classList.add('hidden');
+            return true;
+        }
+
+        // ANIMAÇÃO DE CARREGAMENTO
+        function processar(){
+            if (!validarDpi()) return; // Só continua se for válido
+
+            document.getElementById("loader").style.display = "block";
+            document.getElementById("resultado").style.display = "none";
+            document.getElementById("resultado").style.opacity = '0';
+            
+            let percent = 0; 
+            const arma = document.getElementById("armaNome"); 
+            const fill = document.getElementById("scanFill"); 
+            const scan = document.getElementById("scanPercent");
+            
+            let troca = setInterval(()=>{ 
+                arma.innerText = scans[Math.floor(Math.random() * scans.length)]; 
+            }, 180);
+            
+            let barra = setInterval(()=>{ 
+                percent += 4; 
+                if(percent > 100) percent = 100; 
+                scan.innerText = percent + "%"; 
+                fill.style.width = percent + "%"; 
+            }, 100);
+            
+            setTimeout(()=>{ 
+                clearInterval(troca); 
+                clearInterval(barra); 
+                document.getElementById("loader").style.display = "none"; 
+                gerar(); 
+            }, 2600);
+        }
+
+        // CRIADOR DE BARRAS VISUAIS
+        function criarBarra(nome, valor, maximo){
+            let largura = (valor / maximo) * 100;
+            return`
+            <div class="mb-3">
+                <div class="flex justify-between mb-1">
+                    <span class="text-white font-semibold">${nome}</span>
+                    <span class="text-texto_vermelho font-bold text-lg text-glow">${valor}</span>
+                </div>
+                <div class="h-3 bg-escuro rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-dourado via-laranja to-vermelho rounded-full transition-all duration-500" style="width:${largura}%"></div>
+                </div>
+            </div>`;
+        }
+
+        // ✅ LÓGICA COM VALORES FIXOS E REGRAS EXATAS
+        function gerar(){
+            const tipo = document.getElementById("tipo").value;
+            const modo = document.getElementById("modo").value;
+            const calibragem = document.getElementById("calibragem").value;
+            const marca = document.getElementById("marca").value.toLowerCase();
+            const modelo = document.getElementById("modelo").value.toLowerCase();
+            const famoso = document.getElementById("famoso").value.toLowerCase();
+            const usarDpi = document.getElementById("usarDpi").value;
+            const dpi = usarDpi === "ON" ? Number(document.getElementById("dpi").value) : "PADRÃO";
+
+            let valores = {};
+            let maximoGeral = 200;
+
+            // ==============================================
+            // ✅ REGRAS EXATAS QUE VOCÊ PEDIU:
+            // BAIXA: 100 A 150
+            // MÉDIA: 120 A 170
+            // ALTA: 150 A 200
+            // ==============================================
+            if(tipo === "BAIXA"){
+                // Valores FIXOS entre 100 e 150
+                valores = {
+                    geral: 125,
+                    red: 118,
+                    mira2: 110,
+                    mira4: 105,
+                    awm: 102,
+                    livre: 115,
+                    botao: 42
+                };
+                maximoGeral = 150;
+            }
+
+            if(tipo === "MEDIA"){
+                // Valores FIXOS entre 120 e 170
+                valores = {
+                    geral: 145,
+                    red: 138,
+                    mira2: 130,
+                    mira4: 122,
+                    awm: 116,
+                    livre: 135,
+                    botao: 44
+                };
+                maximoGeral = 170;
+            }
+
+            if(tipo === "ALTA"){
+                // Valores FIXOS entre 150 e 200
+                valores = {
+                    geral: 175,
+                    red: 168,
+                    mira2: 160,
+                    mira4: 152,
+                    awm: 145,
+                    livre: 165,
+                    botao: 46
+                };
+                maximoGeral = 200;
+            }
+
+            // ✅ AJUSTES POR MODO (PEQUENOS AJUSTES SEM SAIR DA REGRA)
+            if(modo === "LENDA"){
+                valores.geral += 3;
+                valores.red += 2;
+                valores.mira2 += 2;
+                valores.mira4 += 1;
+                valores.livre += 3;
+            }
+            if(modo === "PROIBIDA"){
+                valores.geral += 5;
+                valores.red += 4;
+                valores.mira2 += 3;
+                valores.mira4 += 3;
+                valores.awm += 2;
+                valores.livre += 4;
+            }
+
+            // ✅ AJUSTES POR CALIBRAGEM
+            if(calibragem === "PRO"){
+                valores.geral += 2;
+                valores.botao += 1;
+            }
+            if(calibragem === "FREESTYLE"){
+                valores.geral += 4;
+                valores.red += 3;
+                valores.botao += 2;
+            }
+
+            // ✅ AJUSTES POR MARCA
+            if(marca.includes("xiaomi") || marca.includes("poco") || marca.includes("redmi")) {
+                valores.geral += 3;
+                valores.red += 2;
+            }
+            if(marca.includes("iphone")) {
+                valores.geral += 5;
+                valores.mira2 += 3;
+            }
+            if(marca.includes("samsung")) {
+                valores.geral += 2;
+            }
+            if(marca.includes("motorola")) {
+                valores.geral += 1;
+            }
+            if(marca.includes("realme") || marca.includes("oppo")) {
+                valores.geral += 3;
+            }
+
+            // ✅ AJUSTES POR MODELO
+            if(modelo.includes("a03") || modelo.includes("a10")) {
+                valores.geral -= 3;
+            }
+            if(modelo.includes("s23") || modelo.includes("s24") || modelo.includes("note")) {
+                valores.geral += 2;
+            }
+
+            // ✅ AJUSTES POR INFLUENCIADOR
+            if(famoso.includes("nobru")) { valores.geral += 4; valores.botao = 46; }
+            if(famoso.includes("two9")) { valores.geral += 5; valores.botao = 44; }
+            if(famoso.includes("cerol")) { valores.geral += 2; valores.botao = 41; }
+            if(famoso.includes("freitas")) { valores.geral += 4; valores.botao = 45; }
+            if(famoso.includes("marechal")) { valores.geral += 5; valores.botao = 46; }
+            if(famoso.includes("coringa")) { valores.geral += 3; valores.botao = 42; }
+            if(famoso.includes("bd7") || famoso.includes("pevil") || famoso.includes("vitinho") || famoso.includes("lipe")) { valores.geral += 6; valores.botao = 47; }
+
+            // ==============================================
+            // ✅ GARANTE QUE NÃO SAIA DAS REGRAS
+            // ==============================================
+            if(tipo === "BAIXA"){
+                valores.geral = Math.min(150, Math.max(100, valores.geral));
+                valores.red = Math.min(150, Math.max(100, valores.red));
+                valores.mira2 = Math.min(150, Math.max(100, valores.mira2));
+                valores.mira4 = Math.min(150, Math.max(100, valores.mira4));
+                valores.awm = Math.min(150, Math.max(100, valores.awm));
+                valores.livre = Math.min(150, Math.max(100, valores.livre));
+            }
+            if(tipo === "MEDIA"){
+                valores.geral = Math.min(170, Math.max(120, valores.geral));
+                valores.red = Math.min(170, Math.max(120, valores.red));
+                valores.mira2 = Math.min(170, Math.max(120, valores.mira2));
+                valores.mira4 = Math.min(170, Math.max(120, valores.mira4));
+                valores.awm = Math.min(170, Math.max(120, valores.awm));
+                valores.livre = Math.min(170, Math.max(120, valores.livre));
+            }
+            if(tipo === "ALTA"){
+                valores.geral = Math.min(200, Math.max(150, valores.geral));
+                valores.red = Math.min(200, Math.max(150, valores.red));
+                valores.mira2 = Math.min(200, Math.max(150, valores.mira2));
+                valores.mira4 = Math.min(200, Math.max(150, valores.mira4));
+                valores.awm = Math.min(200, Math.max(150, valores.awm));
+                valores.livre = Math.min(200, Math.max(150, valores.livre));
+            }
+
+            // ✅ HIERARQUIA CORRETA PARA NÃO DAR CAPA
+            if(valores.red >= valores.geral) valores.red = valores.geral - 2;
+            if(valores.mira2 >= valores.red) valores.mira2 = valores.red - 3;
+            if(valores.mira4 >= valores.mira2) valores.mira4 = valores.mira2 - 4;
+            valores.botao = Math.max(36, Math.min(48, valores.botao));
+
+            // ✅ RENDERIZAÇÃO DO RESULTADO
+            document.getElementById("cards").innerHTML = `
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-black text-texto_vermelho text-glow">IA CALCULADA 1:1</h3>
+                    <span class="px-3 py-1 rounded-sm gradiente-ouro text-white font-bold text-sm shadow-glow-vermelho">🔥 ${modo.toUpperCase()}</span>
+                </div>
+
+                ${criarBarra("GERAL", valores.geral, maximoGeral)}
+                ${criarBarra("PONTO VERMELHO", valores.red, maximoGeral)}
+                ${criarBarra("MIRA 2X", valores.mira2, maximoGeral)}
+                ${criarBarra("MIRA 4X", valores.mira4, maximoGeral)}
+                ${criarBarra("AWM", valores.awm, maximoGeral)}
+                ${criarBarra("OLHADINHA", valores.livre, maximoGeral)}
+
+                <div class="py-4 px-4 bg-escuro/70 rounded-md text-center mb-4 mt-6">
+                    <span class="text-texto_vermelho text-5xl font-black text-glow">${valores.botao}</span>
+                    <p class="text-white text-sm mt-1 font-semibold">BOTÃO ULTRA CAPA</p>
+                </div>
+
+                <div class="py-2 px-4 bg-escuro/70 rounded-md text-center mb-4">
+                    <span class="text-texto_vermelho font-bold text-glow">⚡ DPI OTIMIZADO : ${dpi} | PROPORÇÃO 1:1</span>
+                </div>
+
+                <div class="py-3 px-4 bg-gradient-to-r from-dourado/20 to-vermelho/20 rounded-md text-center shadow-glow-vermelho">
+                    <span class="text-white font-black">✅ 1000% ANTI-PINAR • TRAVADO NA CABEÇA</span>
+                </div>
+            `;
+
+            // ✅ MOSTRAR RESULTADO COM ANIMAÇÃO
+            document.getElementById("resultado").style.display = "block";
+            setTimeout(() => document.getElementById("resultado").style.opacity = '1', 10);
+        }
+    </script>
+</body>
+</html>
